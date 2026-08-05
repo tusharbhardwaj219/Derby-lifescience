@@ -1,0 +1,28 @@
+{
+  "name": "derby-backend",
+  "version": "1.0.0",
+  "description": "Backend for the Derby Lifescience landing page — contact form API (Express + MongoDB + Nodemailer).",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.0.0",
+    "mongoose": "^8.9.5",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.16"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.1.2"
+  }
+}

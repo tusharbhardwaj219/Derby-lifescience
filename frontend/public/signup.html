@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — Derby Lifescience</title>
+  <meta name="description" content="Create your Derby Lifescience account to manage products, orders, inventory, and business operations on a secure enterprise platform." />
+  <meta name="theme-color" content="#769382" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Create Account — Derby Lifescience" />
+  <meta property="og:description" content="Create your Derby Lifescience account on a secure platform." />
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Shared reset + design tokens -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="image/D.png" />
+  <link rel="apple-touch-icon" href="image/D.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <!-- Signup-page styles -->
+  <link rel="stylesheet" href="css/signup.css" />
+
+  <noscript>
+    <style>[data-animate]{opacity:1 !important;transform:none !important;}</style>
+  </noscript>
+</head>
+<body class="auth-body">
+
+  <!-- ============================ LOADER ============================ -->
+  <div class="loader" id="loader" role="status" aria-label="Loading Derby Lifescience">
+    <canvas class="loader__canvas" id="loaderCanvas" aria-hidden="true"></canvas>
+    <span class="loader__ambient" aria-hidden="true"></span>
+    <span class="loader__wave" aria-hidden="true"></span>
+    <div class="loader__ui">
+      <div class="loader__stage">
+        <span class="loader__halo" aria-hidden="true"></span>
+        <span class="loader__ring" aria-hidden="true"></span>
+        <span class="loader__ring loader__ring--2" aria-hidden="true"></span>
+        <span class="loader__logo" id="loaderLogo">
+          <img src="image/D.png" alt="Derby Lifescience" />
+          <span class="loader__shimmer" aria-hidden="true"></span>
+        </span>
+      </div>
+      <p class="loader__name">Derby Lifesciences</p>
+      <p class="loader__tag">Advancing Healthcare Through Quality, Innovation &amp; Trust</p>
+      <div class="loader__bar" aria-hidden="true"><span id="loaderBar"></span></div>
+    </div>
+  </div>
+  <noscript><style>#loader{display:none !important;}</style></noscript>
+
+  <main class="auth">
+
+    <!-- ==================== LEFT · BRAND ==================== -->
+    <section class="auth__brand">
+      <div class="auth__brand-media" aria-hidden="true"></div>
+
+      <!-- floating abstract shapes -->
+      <span class="shape shape--1" aria-hidden="true"></span>
+      <span class="shape shape--2" aria-hidden="true"></span>
+      <span class="shape shape--ring" aria-hidden="true"></span>
+
+      <!-- floating glass UI cards -->
+      <div class="float-card float-card--stat" aria-hidden="true">
+        <div class="float-card__chart">
+          <span style="height:38%"></span><span style="height:60%"></span><span style="height:48%"></span>
+          <span style="height:78%"></span><span style="height:64%"></span><span style="height:96%"></span>
+        </div>
+        <div class="float-card__meta">
+          <b>+24%</b>
+          <span>Orders this month</span>
+        </div>
+      </div>
+
+      <div class="float-card float-card--secure" aria-hidden="true">
+        <span class="float-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"/><path d="M9.5 12l1.8 1.8 3.2-3.6"/></svg>
+        </span>
+        <div>
+          <b>Verified &amp; Secure</b>
+          <span>256-bit encryption</span>
+        </div>
+      </div>
+
+      <div class="auth__brand-inner">
+        <a href="index.html" class="auth__logo" aria-label="Derby Lifescience — home">
+          <img src="image/DERBY-logo.png" alt="Derby Lifescience" />
+        </a>
+
+        <div class="auth__brand-copy" data-animate>
+          <span class="auth__eyebrow">Create your account</span>
+          <h1 class="auth__headline">First, cultivate your image; only then should you step into the role.</h1>
+          <p class="auth__sub">
+            Create your account to access a secure platform for managing products, orders,
+            inventory, and business operations with confidence.
+          </p>
+        </div>
+
+        <ul class="auth__stats" aria-label="Why businesses trust us">
+          <li class="auth__stat" data-animate>
+            <b>10,000+</b>
+            <span>Registered businesses</span>
+          </li>
+          <li class="auth__stat" data-animate>
+            <b>Secure</b>
+            <span>Authentication</span>
+          </li>
+          <li class="auth__stat" data-animate>
+            <b>Trusted</b>
+            <span>Across India</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== RIGHT · SIGNUP FORM ==================== -->
+    <section class="auth__panel">
+      <span class="blob blob--1" aria-hidden="true"></span>
+      <span class="blob blob--2" aria-hidden="true"></span>
+
+      <div class="signup-card" data-animate>
+        <a href="index.html" class="back-link" aria-label="Back to home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          <span>Back to home</span>
+        </a>
+        <div class="signup-card__head">
+          <h2 class="signup-card__title">Create Your Account</h2>
+          <p class="signup-card__sub">Join our platform and start managing your business efficiently.</p>
+        </div>
+
+        <form class="sform" id="signupForm" novalidate>
+          <div class="sform__row">
+            <!-- Full Name -->
+            <div class="sf">
+              <span class="sf__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="8" r="4"/></svg>
+              </span>
+              <input class="sf__input" type="text" id="fullName" name="fullName" placeholder=" " autocomplete="name" required />
+              <label class="sf__label" for="fullName">Full Name</label>
+              <span class="sf__error" data-error-for="fullName"></span>
+            </div>
+
+            <!-- Company -->
+            <div class="sf">
+              <span class="sf__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01M9 17h.01M15 17h.01"/></svg>
+              </span>
+              <input class="sf__input" type="text" id="company" name="company" placeholder=" " autocomplete="organization" required />
+              <label class="sf__label" for="company">Company Name</label>
+              <span class="sf__error" data-error-for="company"></span>
+            </div>
+          </div>
+
+          <div class="sform__row">
+            <!-- Email -->
+            <div class="sf">
+              <span class="sf__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg>
+              </span>
+              <input class="sf__input" type="email" id="email" name="email" placeholder=" " autocomplete="email" required />
+              <label class="sf__label" for="email">Email Address</label>
+              <span class="sf__error" data-error-for="email"></span>
+            </div>
+
+            <!-- Mobile -->
+            <div class="sf">
+              <span class="sf__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 18h2"/></svg>
+              </span>
+              <input class="sf__input" type="tel" id="mobile" name="mobile" placeholder=" " autocomplete="tel" required />
+              <label class="sf__label" for="mobile">Mobile Number</label>
+              <span class="sf__error" data-error-for="mobile"></span>
+            </div>
+          </div>
+
+          <div class="sform__row">
+            <!-- Password -->
+            <div class="sf sf--pw">
+              <span class="sf__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+              </span>
+              <input class="sf__input sf__input--pw" type="password" id="password" name="password" placeholder=" " autocomplete="new-password" required />
+              <label class="sf__label" for="password">Password</label>
+              <button class="sf__toggle" type="button" data-toggle="password" aria-label="Show password" aria-pressed="false">
+                <svg class="sf__eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="sf__eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.6 6.2A9.7 9.7 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3.3 4M6.2 6.3A17 17 0 0 0 2 12s3.5 7 10 7a9.6 9.6 0 0 0 4-.85"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+              </button>
+              <div class="pw-strength" id="pwStrength" data-level="0" aria-hidden="true">
+                <span class="pw-strength__track"><span class="pw-strength__bar"></span></span>
+                <span class="pw-strength__label">Enter a password</span>
+              </div>
+              <span class="sf__error" data-error-for="password"></span>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="sf">
+              <span class="sf__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M9.5 15.5l1.7 1.7 3.3-3.3"/></svg>
+              </span>
+              <input class="sf__input sf__input--pw" type="password" id="confirm" name="confirm" placeholder=" " autocomplete="new-password" required />
+              <label class="sf__label" for="confirm">Confirm Password</label>
+              <button class="sf__toggle" type="button" data-toggle="confirm" aria-label="Show password" aria-pressed="false">
+                <svg class="sf__eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="sf__eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.6 6.2A9.7 9.7 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3.3 4M6.2 6.3A17 17 0 0 0 2 12s3.5 7 10 7a9.6 9.6 0 0 0 4-.85"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+              </button>
+              <span class="sf__error" data-error-for="confirm"></span>
+            </div>
+          </div>
+
+          <!-- Agreements -->
+          <div class="sform__agree">
+            <label class="scheck">
+              <input type="checkbox" id="terms" name="terms" class="scheck__input" required />
+              <span class="scheck__box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              </span>
+              <span class="scheck__label">I agree to the <a href="#">Terms &amp; Conditions</a></span>
+            </label>
+            <label class="scheck">
+              <input type="checkbox" id="privacy" name="privacy" class="scheck__input" required />
+              <span class="scheck__box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              </span>
+              <span class="scheck__label">I accept the <a href="#">Privacy Policy</a></span>
+            </label>
+            <span class="sf__error" data-error-for="agree"></span>
+          </div>
+
+          <!-- Submit -->
+          <button class="btn btn--primary btn--block" type="submit" id="signupBtn">
+            <span class="btn__label">Create Account</span>
+            <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <svg class="btn__spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+          </button>
+
+          <p class="signup-status" id="signupStatus" role="status" aria-live="polite" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Account created — welcome to Derby Lifescience! Redirecting…</span>
+          </p>
+
+          <div class="divider"><span>OR</span></div>
+
+          <button class="btn btn--google btn--block" type="button" id="googleBtn">
+            <svg class="g-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <path fill="#4285F4" d="M23.52 12.27c0-.79-.07-1.54-.2-2.27H12v4.51h6.47a5.53 5.53 0 0 1-2.4 3.63v3h3.88c2.27-2.09 3.57-5.17 3.57-8.87z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.96-1.08 7.95-2.91l-3.88-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09A12 12 0 0 0 12 24z"/>
+              <path fill="#FBBC05" d="M5.27 14.29a7.2 7.2 0 0 1 0-4.58V6.62H1.29a12 12 0 0 0 0 10.76l3.98-3.09z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.44-3.44A11.5 11.5 0 0 0 12 0 12 12 0 0 0 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z"/>
+            </svg>
+            <span>Continue with Google</span>
+          </button>
+
+          <p class="signup-alt">Already have an account? <a href="login.html">Sign In</a></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/loader.js"></script>
+  <script src="js/signup.js"></script>
+</body>
+</html>

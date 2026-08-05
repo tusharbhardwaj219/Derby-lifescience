@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products — Derby Lifescience</title>
+  <meta name="description" content="Explore the Derby Lifescience pharmaceutical range — tablets, capsules, syrups, sachets, creams and injectables across every major therapeutic category." />
+  <meta name="theme-color" content="#1E2821" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Products — Derby Lifescience" />
+  <meta property="og:description" content="The Derby Lifescience pharmaceutical range across every major therapeutic category." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="image/D.png" />
+  <link rel="apple-touch-icon" href="image/D.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/products.css" />
+
+  <noscript>
+    <style>
+      [data-animate]{opacity:1 !important;transform:none !important;}
+      #loader{display:none !important;}
+    </style>
+  </noscript>
+</head>
+<body>
+
+  <!-- ============================ LOADER ============================ -->
+  <div class="loader" id="loader" role="status" aria-label="Loading Derby Lifescience">
+    <canvas class="loader__canvas" id="loaderCanvas" aria-hidden="true"></canvas>
+    <span class="loader__ambient" aria-hidden="true"></span>
+    <span class="loader__wave" aria-hidden="true"></span>
+    <div class="loader__ui">
+      <div class="loader__stage">
+        <span class="loader__halo" aria-hidden="true"></span>
+        <span class="loader__ring" aria-hidden="true"></span>
+        <span class="loader__ring loader__ring--2" aria-hidden="true"></span>
+        <span class="loader__logo" id="loaderLogo">
+          <img src="image/D.png" alt="Derby Lifescience" />
+          <span class="loader__shimmer" aria-hidden="true"></span>
+        </span>
+      </div>
+      <p class="loader__name">Derby Lifesciences</p>
+      <p class="loader__tag">Advancing Healthcare Through Quality, Innovation &amp; Trust</p>
+      <div class="loader__bar" aria-hidden="true"><span id="loaderBar"></span></div>
+    </div>
+  </div>
+  <noscript><style>#loader{display:none !important;}</style></noscript>
+
+  <!-- ============================ HEADER ============================ -->
+  <div class="header-wrap" id="headerWrap">
+    <div class="capsule">
+      <a href="index.html" class="logo-slot" aria-label="Derby Lifescience — home">
+        <img src="image/D.png" alt="" class="logo-mark" />
+        <span class="brand" aria-hidden="true">
+          <span class="brand__top">Derby</span>
+          <span class="brand__bot">Lifescience</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="products.html" class="nav-link" aria-current="page">Product</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="derby-product-catalogue-2026-27.pdf" class="nav-catalog" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          View Catalog
+        </a>
+        <!-- <span class="nav-divider" aria-hidden="true"></span>
+        <a href="login.html" class="nav-login">Log in</a>
+        <a href="signup.html" class="nav-cta">Sign up</a>  -->
+ </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html" aria-current="page">Product</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="derby-product-catalogue-2026-27.pdf" class="mobile-catalog" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+        View Catalog
+      </a>
+      <!-- <div class="mobile-sep" aria-hidden="true"></div>
+      <a href="login.html" class="mobile-login">Log in</a>
+      <a href="signup.html" class="mobile-cta">Sign up</a> -->
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================ HERO ============================ -->
+    <header class="p-hero">
+      <!-- healthcare-inspired abstract backdrop -->
+      <div class="p-hero__bg" aria-hidden="true">
+        <span class="p-hero__glow p-hero__glow--a"></span>
+        <span class="p-hero__glow p-hero__glow--b"></span>
+        <span class="p-hero__grid"></span>
+        <svg class="p-hero__mol" viewBox="0 0 140 140">
+          <circle cx="70" cy="22" r="6"/><circle cx="22" cy="70" r="6"/>
+          <circle cx="118" cy="70" r="6"/><circle cx="70" cy="118" r="6"/>
+          <path d="M70 22 22 70M70 22l48 48M22 70l48 48M118 70l-48 48M22 70h96"/>
+        </svg>
+      </div>
+
+      <div class="container p-hero__inner">
+        <!-- breadcrumb -->
+        <nav class="crumbs" aria-label="Breadcrumb" data-animate>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </li>
+            <li><span aria-current="page">Products</span></li>
+          </ol>
+        </nav>
+
+        <span class="p-eyebrow" data-animate>Our Product Range</span>
+
+        <h1 class="p-hero__title" data-animate>
+          Medicines built on <em>quality</em>,<br />delivered with trust
+        </h1>
+
+        <p class="p-hero__lead" data-animate>
+          A complete portfolio spanning tablets, capsules, syrups, sachets, creams and injectables —
+          manufactured to consistent standards and supplied across India. Select any product to
+          view its full specification.
+        </p>
+
+        <!-- trust strip -->
+        <ul class="p-hero__stats" data-animate>
+          <li>
+            <b><span class="p-counter" data-count="95">0</span>+</b>
+            <span>Products in range</span>
+          </li>
+          <li>
+            <b><span class="p-counter" data-count="12">0</span>+</b>
+            <span>Therapeutic areas</span>
+          </li>
+          <li>
+            <b class="is-word">PAN&nbsp;India</b>
+            <span>Distribution reach</span>
+          </li>
+          <li>
+            <b class="is-word">WHO&#8209;GMP</b>
+            <span>Quality standards</span>
+          </li>
+        </ul>
+
+        <a href="#catalogue" class="p-hero__scroll" data-animate>
+          <span>Browse the range</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- ============================ CATALOGUE ============================ -->
+    <section class="p-catalogue" id="catalogue" aria-labelledby="grid-h">
+      <div class="container">
+        <h2 class="sr-only" id="grid-h">Product range</h2>
+
+        <!-- toolbar -->
+        <div class="p-tools" data-animate>
+          <div class="p-tools__row">
+            <div class="p-search">
+              <svg class="p-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />
+              </svg>
+              <input type="search" id="productSearch" placeholder="Search products…  (press /)" aria-label="Search products by name" autocomplete="off" />
+              <button class="p-search__clear" id="searchClear" type="button" aria-label="Clear search" hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+              </button>
+            </div>
+
+            <div class="p-sort">
+              <label class="sr-only" for="productSort">Sort products</label>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M6 12h12M10 18h4"/></svg>
+              <select id="productSort">
+                <option value="az">Name · A–Z</option>
+                <option value="za">Name · Z–A</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- dosage-form filters (read from each product name) -->
+          <div class="p-chips" id="productFilters" role="group" aria-label="Filter by dosage form"></div>
+
+          <p class="p-count" id="productCount" role="status" aria-live="polite"></p>
+        </div>
+
+        <!-- grid (rendered by js/products.js) -->
+        <div class="p-grid" id="productGrid"></div>
+
+        <p class="p-empty" id="productEmpty" hidden>
+          No products match that search. Try a different name.
+        </p>
+
+        <noscript>
+          <p class="p-empty">Please enable JavaScript to browse the product range.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- ============================ CTA ============================ -->
+    <section class="p-cta" aria-labelledby="pcta-h">
+      <div class="p-cta__decor" aria-hidden="true"><span></span><span></span></div>
+      <div class="container p-cta__inner" data-animate>
+        <h2 class="p-cta__title" id="pcta-h">Need product details or a quotation?</h2>
+        <p class="p-cta__text">Share your requirement and our team will send specifications, pack sizes and availability.</p>
+        <a href="contact.html" class="btn btn--primary">
+          Contact Us
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ PRODUCT MODAL ============================ -->
+  <div class="pm" id="productModal" role="dialog" aria-modal="true" aria-labelledby="pmTitle" hidden>
+    <div class="pm__backdrop" data-close aria-hidden="true"></div>
+
+    <div class="pm__panel" role="document">
+      <button class="pm__close" type="button" data-close aria-label="Close product details">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+
+      <!-- move between products without leaving the modal (← / → keys too) -->
+      <button class="pm__nav pm__nav--prev" type="button" id="pmPrev" aria-label="Previous product">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="pm__nav pm__nav--next" type="button" id="pmNext" aria-label="Next product">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+
+      <div class="pm__grid">
+        <!-- LEFT · product shot -->
+        <figure class="pm__media">
+          <img id="pmImage" src="" alt="" />
+          <figcaption class="pm__pos" id="pmPos" aria-live="polite"></figcaption>
+        </figure>
+
+        <!-- RIGHT · details -->
+        <div class="pm__body">
+          <span class="pm__cat" id="pmCategory"></span>
+          <h2 class="pm__title" id="pmTitle"></h2>
+          <p class="pm__desc" id="pmDesc"></p>
+          <ul class="pm__tags" id="pmTags" aria-label="Product features"></ul>
+          <dl class="pm__specs" id="pmSpecs"></dl>
+          <p class="pm__disclaimer" id="pmDisclaimer"></p>
+
+          <div class="pm__actions">
+            <a href="contact.html" class="btn btn--primary btn--block">
+              Contact Us
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo-slot" aria-label="Derby Lifescience logo area">
+            <img src="image/D.png" alt="Derby Lifescience" />
+          </div>
+          <p>Advancing healthcare through quality, innovation, and trust — delivering safe, effective, and affordable medicines across India.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Information</h4>
+          <div class="contact-list">
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span>1st–4th Floors, Fair Ford Tower, Gali No-07, Main Road, Anangpur Village, Opposite Mount Kailash Factory, Faridabad- 121003 (Haryana)</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg>
+              <span>info@fairfordpharma.com</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5V17a2 2 0 0 1-2 2A13 13 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+              <span>+91 8595939723</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <span>Follow us</span>
+        <div class="socials" aria-label="Social media">
+          <a href="https://www.linkedin.com/company/fairfordpharma" class="social-btn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.5v.01M12 17v-3.6a2 2 0 0 1 4 0V17M12 17v-6.5"/></svg></a>
+          
+          <a href="https://x.com" class="social-btn" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+          
+          <a href="https://www.facebook.com/profile.php?id=61550892159031" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8.5V7a1.5 1.5 0 0 1 1.5-1.5H17M14 8.5H11.5M14 8.5V19M14 12h3"/></svg></a>
+          
+          <a href="https://www.instagram.com/fairfordpharma/?__pwa=1" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7v.01"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom__left">
+          <p class="copyright">© 2026 Derby Lifescience. All rights reserved.</p>
+          <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms &amp; Conditions</a>
+          </div>
+        </div>
+
+        <!-- TODO: replace each href="#" with the real LinkedIn profile URL -->
+        <p class="credit">
+          <span class="credit__by">Designed &amp; created by</span>
+          <a class="credit__name" href="https://www.linkedin.com/in/bhardwaj-tushar-147711309?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">Derby</a><span class="credit__sep">
+
+          <a class="credit__name" href="https://www.linkedin.com/in/himanshu-prajapati-469737327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">Lifescience</a>
+          <!-- <span class="credit__sep">&amp;</span> -->
+
+          <a class="credit__name" href="https://www.linkedin.com/in/dilipydv/" target="_blank" rel="noopener noreferrer">Team</a>
+          
+          <span class="credit__heart" role="img" aria-label="love">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg>
+          </span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- back to top -->
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <script src="js/loader.js"></script>
+  <script src="js/script.js"></script>
+  <!-- catalogue data (must load before products.js) -->
+  <script src="js/products-data.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>
+

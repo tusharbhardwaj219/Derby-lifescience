@@ -1,0 +1,18 @@
+{
+  "name": "Derby Lifescience",
+  "short_name": "Derby",
+  "description": "Advancing healthcare through quality, innovation, and trust.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F3EFE3",
+  "theme_color": "#769382",
+  "icons": [
+    {
+      "src": "image/D.png",
+      "sizes": "518x648",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

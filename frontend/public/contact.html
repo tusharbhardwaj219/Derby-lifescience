@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Derby Lifescience</title>
+  <meta name="description" content="Get in touch with Derby Lifescience. Reach our team for product information, pricing, business partnerships, and support. Office in Faridabad, Haryana — we reply within 24 hours." />
+  <meta name="theme-color" content="#1E2821" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact Us — Derby Lifescience" />
+  <meta property="og:description" content="We'd love to hear from you. Questions about products, partnerships, pricing, or support — our team is here to help." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Shared design system (header, footer, tokens) -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="image/D.png" />
+  <link rel="apple-touch-icon" href="image/D.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <!-- Contact-page specific styles -->
+  <link rel="stylesheet" href="css/contact.css" />
+
+  <!-- Progressive enhancement: if JS is off, reveal all animated content -->
+  <noscript>
+    <style>[data-animate]{opacity:1 !important;transform:none !important;}</style>
+  </noscript>
+</head>
+<body>
+
+  <!-- ============================ LOADER ============================ -->
+  <div class="loader" id="loader" role="status" aria-label="Loading Derby Lifescience">
+    <canvas class="loader__canvas" id="loaderCanvas" aria-hidden="true"></canvas>
+    <span class="loader__ambient" aria-hidden="true"></span>
+    <span class="loader__wave" aria-hidden="true"></span>
+    <div class="loader__ui">
+      <div class="loader__stage">
+        <span class="loader__halo" aria-hidden="true"></span>
+        <span class="loader__ring" aria-hidden="true"></span>
+        <span class="loader__ring loader__ring--2" aria-hidden="true"></span>
+        <span class="loader__logo" id="loaderLogo">
+          <img src="image/D.png" alt="Derby Lifescience" />
+          <span class="loader__shimmer" aria-hidden="true"></span>
+        </span>
+      </div>
+      <p class="loader__name">Derby Lifesciences</p>
+      <p class="loader__tag">Advancing Healthcare Through Quality, Innovation &amp; Trust</p>
+      <div class="loader__bar" aria-hidden="true"><span id="loaderBar"></span></div>
+    </div>
+  </div>
+  <noscript><style>#loader{display:none !important;}</style></noscript>
+
+  <!-- ============================ HEADER ============================ -->
+  <div class="header-wrap" id="headerWrap">
+    <div class="capsule">
+      <a href="index.html" class="logo-slot" aria-label="Derby Lifescience — home">
+        <img src="image/D.png" alt="" class="logo-mark" />
+        <span class="brand" aria-hidden="true">
+          <span class="brand__top">Derby</span>
+          <span class="brand__bot">Lifescience</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="products.html" class="nav-link">Product</a>
+        <a href="contact.html" class="nav-link" aria-current="page">Contact Us</a>
+        <a href="derby-product-catalogue-2026-27.pdf" class="nav-catalog" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          View Catalog
+        </a>
+        <!-- <span class="nav-divider" aria-hidden="true"></span>
+        <a href="login.html" class="nav-login">Log in</a>
+        <a href="#" class="nav-cta">Sign up</a> -->
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Product</a>
+      <a href="contact.html" aria-current="page">Contact Us</a>
+      <a href="derby-product-catalogue-2026-27.pdf" class="mobile-catalog" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+        View Catalog
+      </a>
+      <!-- <div class="mobile-sep" aria-hidden="true"></div>
+     <a href="login.html" class="mobile-login">Log in</a>
+      <a href="signup.html" class="mobile-cta">Sign up</a> -->
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================ 1 · HERO ============================ -->
+    <header class="c-hero" id="top">
+      <div class="c-hero__overlay" aria-hidden="true"></div>
+      <div class="container c-hero__inner">
+        <p class="c-hero__eyebrow" data-animate>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Contact Derby Lifescience
+        </p>
+        <h1 class="c-hero__title" data-animate>Get in Touch With Us</h1>
+        <p class="c-hero__sub" data-animate>
+          We'd love to hear from you. Whether you have questions about our products, business
+          partnerships, pricing, or support, our team is here to help.
+        </p>
+        <div class="c-hero__actions" data-animate>
+          <a href="#contact" class="btn btn--primary btn--lg" data-scroll>
+            Contact Us
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Fair+Ford+Tower+Anangpur+Village+Faridabad+Haryana+121003"
+             class="btn btn--glass btn--lg" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20l-5.5 2.5V6L9 3.5m0 16.5l6 2.5M9 20V3.5m6 19l5.5-2.5V3.5L15 6m0 16.5V6m0 0L9 3.5"/></svg>
+            Get Directions
+          </a>
+        </div>
+      </div>
+
+      <a href="#contact" class="c-hero__scroll" data-scroll aria-label="Scroll to contact form">
+        <span class="c-hero__scroll-dot"></span>
+      </a>
+    </header>
+
+    <!-- ==================== 2 · CONTACT STUDIO (redesigned) ==================== -->
+    <section class="studio section" id="contact" aria-labelledby="contact-heading">
+      <!-- layered decorative background -->
+      <div class="studio__decor" aria-hidden="true">
+        <span class="orb orb--a"></span>
+        <span class="orb orb--b"></span>
+      </div>
+
+      <div class="container">
+        <div class="section-head" data-animate>
+          <span class="section-head__eyebrow">We're here to help</span>
+          <h2 class="section-head__title" id="contact-heading">Let's start a conversation</h2>
+          <p class="section-head__sub">Send a message and we'll get back to you within one business day — or reach us directly using the details alongside.</p>
+        </div>
+
+        <div class="studio__layout">
+          <!-- ---------- FORM PANEL (frosted glass) ---------- -->
+          <div class="form-panel" data-animate>
+            <div class="form-panel__glow" aria-hidden="true"></div>
+
+            <div class="form-panel__head">
+              <div>
+                <h3 class="form-panel__title">Send us a message</h3>
+                <p class="form-panel__sub">Fill in the form and our team will be in touch shortly.</p>
+              </div>
+              <span class="form-panel__badge">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                Avg. reply &lt; 24h
+              </span>
+            </div>
+
+            <form class="cform" id="contactForm" novalidate>
+              <div class="cform__row">
+                <!-- Full Name -->
+                <div class="ff">
+                  <span class="ff__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="8" r="4"/></svg>
+                  </span>
+                  <input class="ff__input" type="text" id="fullName" name="fullName" placeholder=" " autocomplete="name" required />
+                  <label class="ff__label" for="fullName">Full Name</label>
+                  <span class="ff__error" data-error-for="fullName"></span>
+                </div>
+
+                <!-- Email -->
+                <div class="ff">
+                  <span class="ff__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg>
+                  </span>
+                  <input class="ff__input" type="email" id="email" name="email" placeholder=" " autocomplete="email" required />
+                  <label class="ff__label" for="email">Email Address</label>
+                  <span class="ff__error" data-error-for="email"></span>
+                </div>
+              </div>
+
+              <div class="cform__row">
+                <!-- Phone -->
+                <div class="ff">
+                  <span class="ff__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5V17a2 2 0 0 1-2 2A13 13 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+                  </span>
+                  <input class="ff__input" type="tel" id="phone" name="phone" placeholder=" " autocomplete="tel" />
+                  <label class="ff__label" for="phone">Phone Number</label>
+                  <span class="ff__error" data-error-for="phone"></span>
+                </div>
+
+                <!-- Company -->
+                <div class="ff">
+                  <span class="ff__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01M9 17h.01M15 17h.01"/></svg>
+                  </span>
+                  <input class="ff__input" type="text" id="company" name="company" placeholder=" " autocomplete="organization" />
+                  <label class="ff__label" for="company">Company Name</label>
+                  <span class="ff__error" data-error-for="company"></span>
+                </div>
+              </div>
+
+              <!-- Subject (optional) -->
+              <div class="ff">
+                <span class="ff__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M4 8h16"/><path d="M8 12h8M8 15h5"/></svg>
+                </span>
+                <input class="ff__input" type="text" id="subject" name="subject" placeholder=" " maxlength="150" autocomplete="off" />
+                <label class="ff__label" for="subject">Subject <span class="ff__opt">(optional)</span></label>
+                <span class="ff__error" data-error-for="subject"></span>
+              </div>
+
+              <!-- Message -->
+              <div class="ff ff--area">
+                <span class="ff__icon ff__icon--top" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </span>
+                <textarea class="ff__input ff__textarea" id="message" name="message" rows="5" placeholder=" " required></textarea>
+                <label class="ff__label" for="message">How can we help?</label>
+                <span class="ff__error" data-error-for="message"></span>
+              </div>
+
+              <!-- Honeypot · hidden from humans, catches spam bots. Do not remove. -->
+              <div class="ff-hp" aria-hidden="true">
+                <label for="website">Do not fill this in</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <button class="btn btn--primary btn--block btn--lg cform__submit" type="submit" id="submitBtn">
+                <span class="btn__label">Send Message</span>
+                <svg class="btn__send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                <svg class="btn__spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+              </button>
+
+              <p class="cform__status" id="formStatus" role="status" aria-live="polite" hidden>
+                <svg class="cform__status-ico cform__status-ico--ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                <svg class="cform__status-ico cform__status-ico--err" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+                <span class="cform__status-txt"></span>
+              </p>
+            </form>
+          </div>
+
+          <!-- ---------- ASIDE STACK ---------- -->
+          <div class="studio__aside">
+            <!-- Direct lines · timeline -->
+            <div class="reach" data-animate>
+              <div class="reach__head">
+                <span class="reach__eyebrow">Direct lines</span>
+                <h3 class="reach__title">Reach us directly</h3>
+              </div>
+
+              <ul class="tl">
+                <li class="tl__item">
+                  <span class="tl__node" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                  </span>
+                  <div class="tl__body">
+                    <span class="tl__label">Office</span>
+                    <a class="tl__value" href="https://www.google.com/maps/search/?api=1&query=Fair+Ford+Tower+Anangpur+Village+Faridabad+Haryana+121003" target="_blank" rel="noopener noreferrer">
+                      1st–4th Floors, Fair Ford Tower,<br />Anangpur Village, Faridabad — 121003, Haryana
+                    </a>
+                  </div>
+                </li>
+
+                <li class="tl__item">
+                  <span class="tl__node" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5V17a2 2 0 0 1-2 2A13 13 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+                  </span>
+                  <div class="tl__body">
+                    <span class="tl__label">Phone</span>
+                    <a class="tl__value" href="tel:+918595939723">+91 85959 39723</a>
+                  </div>
+                </li>
+
+                <li class="tl__item">
+                  <span class="tl__node" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg>
+                  </span>
+                  <div class="tl__body">
+                    <span class="tl__label">Email</span>
+                    <a class="tl__value" href="mailto:info@fairfordpharma.com">info@fairfordpharma.com</a>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="reach__socials" aria-label="Social media">
+                <a href="https://www.linkedin.com/company/fairfordpharma" class="social-btn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.5v.01M12 17v-3.6a2 2 0 0 1 4 0V17M12 17v-6.5"/></svg></a>
+                
+                <a href="https://x.com" class="social-btn" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+                
+                <a href="https://www.facebook.com/profile.php?id=61550892159031" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8.5V7a1.5 1.5 0 0 1 1.5-1.5H17M14 8.5H11.5M14 8.5V19M14 12h3"/></svg></a>
+                
+                <a href="https://www.instagram.com/fairfordpharma/?__pwa=1" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7v.01"/></svg></a>
+              </div>
+            </div>
+
+            <!-- Hours + live support status -->
+            <div class="hours-card" data-animate>
+              <div class="support" id="support" data-online="true">
+                <span class="support__dot" aria-hidden="true"></span>
+                <div class="support__text">
+                  <b class="support__title" id="supportTitle">Support available now</b>
+                  <span class="support__hint" id="supportHint">Typically replies within 24 hours</span>
+                </div>
+                <svg class="support__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 14v2a2 2 0 0 0 2 2h1v-5H6a2 2 0 0 0-2 1zM20 14v2a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 1z"/></svg>
+              </div>
+
+              <div class="hours-card__divider" aria-hidden="true"></div>
+
+              <span class="hours-card__label">Business Hours</span>
+              <ul class="sched">
+                <li class="sched__row"><span>Monday – Saturday</span><span>9:00 AM – 6:00 PM</span></li>
+                <!-- <li class="sched__row"><span>Saturday</span><span>10:00 AM – 2:00 PM</span></li> -->
+                <li class="sched__row sched__row--off"><span>Sunday</span><span>Closed</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3 · MAP SHOWCASE (redesigned) ==================== -->
+    <section class="section mapshow" aria-labelledby="map-heading">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <span class="section-head__eyebrow">Find us</span>
+          <h2 class="section-head__title" id="map-heading">Visit our office</h2>
+          <p class="section-head__sub">Anangpur Village, Faridabad, Haryana — we look forward to welcoming you.</p>
+        </div>
+
+        <div class="mapcard" data-animate>
+          <span class="mapcard__ring" aria-hidden="true"></span>
+
+          <!-- floating location badge -->
+          <div class="mapcard__badge">
+            <span class="mapcard__pin" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </span>
+            <div class="mapcard__badge-text">
+              <b>Derby Lifescience</b>
+              <span>Faridabad HQ</span>
+            </div>
+          </div>
+
+          <iframe
+            class="mapcard__frame"
+            title="Map showing Derby Lifescience office in Faridabad, Haryana"
+            src="https://www.google.com/maps?q=Fair%20Ford%20Tower%2C%20Anangpur%20Village%2C%20Faridabad%2C%20Haryana%20121003&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+
+          <!-- office label + directions bar -->
+          <div class="mapcard__bar">
+            <div class="mapcard__addr">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
+              <span>Fair Ford Tower, Anangpur Village, Faridabad — 121003, Haryana</span>
+            </div>
+            <a class="mapcard__dir"
+               href="https://www.google.com/maps/dir/?api=1&destination=Fair+Ford+Tower+Anangpur+Village+Faridabad+Haryana+121003"
+               target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20l-5.5 2.5V6L9 3.5m0 16.5l6 2.5M9 20V3.5m6 19l5.5-2.5V3.5L15 6m0 16.5V6m0 0L9 3.5"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4 · EXTRA INFO CARDS ==================== -->
+    <section class="section" aria-labelledby="help-heading">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <span class="section-head__eyebrow">How can we help?</span>
+          <h2 class="section-head__title" id="help-heading">Reach the right team</h2>
+          <p class="section-head__sub">Pick the path that matches your enquiry and we'll route you to the right people.</p>
+        </div>
+
+        <div class="help-cards">
+          <article class="help-card" data-animate>
+            <span class="help-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 12.5l-8 8a2 2 0 0 1-2.8 0L3 14V4h10l7.5 7.5a2 2 0 0 1 0 1z"/><circle cx="8" cy="8" r="1.3"/></svg>
+            </span>
+            <h3 class="help-card__title">Sales Inquiry</h3>
+            <p class="help-card__text">Need pricing or product information? Contact our sales team for a tailored quote.</p>
+            <a class="help-card__link" href="mailto:info@fairfordpharma.com?subject=Sales%20Inquiry">
+              Talk to sales
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="help-card" data-animate>
+            <span class="help-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v3a2 2 0 0 0 2 2h1v-5H6a2 2 0 0 0-2 0zM20 13v3a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 0z"/><path d="M18 18a4 4 0 0 1-4 3h-2"/></svg>
+            </span>
+            <h3 class="help-card__title">Technical Support</h3>
+            <p class="help-card__text">Need help using our services? Our support specialists are available to assist you.</p>
+            <a class="help-card__link" href="mailto:info@fairfordpharma.com?subject=Technical%20Support">
+              Get support
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="help-card" data-animate>
+            <span class="help-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7l2.5-2.5a3 3 0 0 1 4.2 4.2L14 13.5l-2-2"/><path d="M12 7L9.5 4.5a3 3 0 0 0-4.2 4.2L10 13.5l4-4"/><path d="M11 12l3 3-2 2-3-3"/></svg>
+            </span>
+            <h3 class="help-card__title">Business Partnership</h3>
+            <p class="help-card__text">Interested in becoming a distributor or partner? Let's discuss opportunities together.</p>
+            <a class="help-card__link" href="mailto:info@fairfordpharma.com?subject=Business%20Partnership">
+              Explore partnership
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= 5 · FAQ ========================= -->
+    <section class="section section--tint" aria-labelledby="faq-heading">
+      <div class="container container--narrow">
+        <div class="section-head" data-animate>
+          <span class="section-head__eyebrow">FAQ</span>
+          <h2 class="section-head__title" id="faq-heading">Frequently asked questions</h2>
+          <p class="section-head__sub">Quick answers to the things people ask us most.</p>
+        </div>
+
+        <div class="faq" id="faq" data-animate>
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-panel-1" id="faq-btn-1">
+              <span>How soon will you reply?</span>
+              <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq__panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1">
+              <p>We aim to respond to every enquiry within 24 business hours. Urgent matters raised by phone during business hours are handled the same day.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-panel-2" id="faq-btn-2">
+              <span>Where is your office located?</span>
+              <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq__panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2">
+              <p>Our office is at Fair Ford Tower, Anangpur Village, Faridabad — 121003, Haryana. Use the “Get Directions” button on the map above to open Google Maps.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-panel-3" id="faq-btn-3">
+              <span>Can I schedule a meeting?</span>
+              <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq__panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3">
+              <p>Absolutely. Send us a note through the form with a couple of preferred time slots, and our team will confirm a meeting — in person or virtually.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-panel-4" id="faq-btn-4">
+              <span>Do you offer business partnerships?</span>
+              <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq__panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4">
+              <p>Yes. We partner with distributors and healthcare organisations. Choose “Business Partnership” above or mention it in your message and we'll share the details.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-panel-5" id="faq-btn-5">
+              <span>Is technical support available?</span>
+              <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq__panel" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5">
+              <p>Our support team is available during business hours, Monday to Saturday. Reach out via the form or email and we'll help you promptly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= 6 · CTA ========================= -->
+    <section class="cta" aria-labelledby="cta-heading">
+      <div class="container cta__inner" data-animate>
+        <h2 class="cta__title" id="cta-heading">Let's Build Something Great Together</h2>
+        <p class="cta__text">Have a project, inquiry, or business opportunity? We'd love to hear from you.</p>
+        <div class="cta__actions">
+          <a href="contact.html" class="btn btn--light btn--lg" data-scroll>
+            Contact Now
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="tel:+918595939723" class="btn btn--outline-light btn--lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5V17a2 2 0 0 1-2 2A13 13 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+            Call Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo-slot" aria-label="Derby Lifescience logo area">
+            <img src="image/D.png" alt="Derby Lifescience" />
+          </div>
+          <p>Advancing healthcare through quality, innovation, and trust — delivering safe, effective, and reliable pharmaceutical solutions.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Information</h4>
+          <div class="contact-list">
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span>1st–4th Floors, Fair Ford Tower, Gali No-07, Main Road, Anangpur Village, Opposite Mount Kailash Factory, Faridabad- 121003 (Haryana)</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg>
+              <span>info@fairfordpharma.com</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5V17a2 2 0 0 1-2 2A13 13 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+              <span>+91 8595939723</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <span>Follow us</span>
+        <div class="socials" aria-label="Social media">
+          <a href="#" class="social-btn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.5v.01M12 17v-3.6a2 2 0 0 1 4 0V17M12 17v-6.5"/></svg></a>
+          <a href="#" class="social-btn" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+          <a href="#" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8.5V7a1.5 1.5 0 0 1 1.5-1.5H17M14 8.5H11.5M14 8.5V19M14 12h3"/></svg></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7v.01"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom__left">
+          <p class="copyright">© 2026 Derby Lifescience. All rights reserved.</p>
+          <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms &amp; Conditions</a>
+          </div>
+        </div>
+
+        <!-- TODO: replace each href="#" with the real LinkedIn profile URL -->
+        <p class="credit">
+          <span class="credit__by">Designed &amp; created by</span>
+          <a class="credit__name" href="https://www.linkedin.com/in/bhardwaj-tushar-147711309?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">Derby</a>
+
+          <a class="credit__name" href="https://www.linkedin.com/in/himanshu-prajapati-469737327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">Lifescience</a>
+          <!-- <span class="credit__sep">&amp;</span> -->
+
+          <a class="credit__name" href="https://www.linkedin.com/in/dilipydv/" target="_blank" rel="noopener noreferrer">Team</a>
+          
+          <span class="credit__heart" role="img" aria-label="love">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg>
+          </span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared header behaviour (capsule + mobile menu) -->
+  <script src="js/loader.js"></script>
+  <script src="js/script.js"></script>
+  <!-- Contact-page behaviour (form, FAQ, reveal, smooth scroll, live status) -->
+  <script src="js/contact.js"></script>
+</body>
+</html>

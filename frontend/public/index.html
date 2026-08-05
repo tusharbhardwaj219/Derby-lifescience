@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Derby Lifescience — Advancing Healthcare Through Quality, Innovation &amp; Trust</title>
+<meta name="description" content="Derby Lifescience delivers high-quality pharmaceutical products through scientific innovation, advanced research, and uncompromising quality standards." />
+<meta name="theme-color" content="#769382" />
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Derby Lifescience — Advancing Healthcare Through Quality, Innovation & Trust" />
+<meta property="og:description" content="High-quality pharmaceutical products through scientific innovation, advanced research, and uncompromising quality standards." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<!-- Shared design system (header, footer, tokens) -->
+<link rel="stylesheet" href="css/style.css" />
+<!-- Loader (must load before paint) -->
+<link rel="stylesheet" href="css/loader.css" />
+<!-- Home-page styles -->
+<link rel="stylesheet" href="css/home.css" />
+
+<!-- Browser head image  -->
+<link rel="icon" type="image/png" href="image/D.png" />
+<link rel="apple-touch-icon" href="image/D.png" />
+<link rel="manifest" href="manifest.json" />
+
+<noscript>
+  <style>
+    [data-animate]{opacity:1 !important;transform:none !important;}
+    #loader{display:none !important;}   /* never trap no-JS visitors behind the loader */
+    /* is-ready never fires without JS — reveal the hero intro directly */
+    .wm__l,.hero__sub,.hero__cta,.hero__scroll{opacity:1 !important;transform:none !important;animation:none !important;}
+  </style>
+</noscript>
+</head>
+<body>
+
+  <!-- ============================ LOADER ============================ -->
+  <div class="loader" id="loader" role="status" aria-label="Loading Derby Lifescience">
+    <canvas class="loader__canvas" id="loaderCanvas" aria-hidden="true"></canvas>
+    <span class="loader__ambient" aria-hidden="true"></span>
+    <span class="loader__wave" aria-hidden="true"></span>
+
+    <div class="loader__ui">
+      <div class="loader__stage">
+        <span class="loader__halo" aria-hidden="true"></span>
+        <span class="loader__ring" aria-hidden="true"></span>
+        <span class="loader__ring loader__ring--2" aria-hidden="true"></span>
+        <span class="loader__logo" id="loaderLogo">
+          <img src="image/D.png" alt="Derby Lifescience" />
+          <span class="loader__shimmer" aria-hidden="true"></span>
+        </span>
+      </div>
+
+      <p class="loader__name">Derby Lifesciences</p>
+      <p class="loader__tag">Advancing Healthcare Through Quality, Innovation &amp; Trust</p>
+      <div class="loader__bar" aria-hidden="true"><span id="loaderBar"></span></div>
+    </div>
+  </div>
+
+  <!-- ============================ HEADER ============================ -->
+  <div class="header-wrap" id="headerWrap">
+    <div class="capsule">
+
+      <a href="index.html" class="logo-slot" aria-label="Derby Lifescience — home">
+        <img src="image/D.png" alt="" class="logo-mark" />
+        <span class="brand" aria-hidden="true">
+          <span class="brand__top">Derby</span>
+          <span class="brand__bot">Lifescience</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="index.html" class="nav-link" aria-current="page">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="products.html" class="nav-link">Product</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="derby-product-catalogue-2026-27.pdf" class="nav-catalog" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          View Catalog
+        </a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Product</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="derby-product-catalogue-2026-27.pdf" class="mobile-catalog" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+        View Catalog
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================ 1.  HERO ============================ -->
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero__media" aria-hidden="true"></div>
+      <div class="hero__veil" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+        <span class="hero__eyebrow" data-animate>Pharmaceutical Excellence · Since Day One</span>
+
+        <h1 class="hero__wordmark" id="hero-title" aria-label="Derby Lifescience">
+          <span class="wm" aria-hidden="true">
+            <span class="wm__l" style="--i:0">D</span><span class="wm__l" style="--i:1">e</span><span class="wm__l" style="--i:2">r</span><span class="wm__l" style="--i:3">b</span><span class="wm__l" style="--i:4">y</span>
+          </span>
+          <span class="wm wm--accent" aria-hidden="true">
+            <span class="wm__l" style="--i:5">L</span><span class="wm__l" style="--i:6">i</span><span class="wm__l" style="--i:7">f</span><span class="wm__l" style="--i:8">e</span><span class="wm__l" style="--i:9">s</span><span class="wm__l" style="--i:10">c</span><span class="wm__l" style="--i:11">i</span><span class="wm__l" style="--i:12">e</span><span class="wm__l" style="--i:13">n</span><span class="wm__l" style="--i:14">c</span><span class="wm__l" style="--i:15">e</span>
+          </span>
+        </h1>
+
+        <p class="hero__sub">
+          Advancing healthcare through quality, innovation and trust — delivering safe, effective
+          and affordable medicines to every corner of India.
+        </p>
+
+        <div class="hero__cta">
+          <a href="contact.html" class="btn btn--primary">
+            Contact Us
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="about.html" class="btn btn--glass">Learn More</a>
+        </div>
+      </div>
+
+      <a href="#about" class="hero__scroll" aria-label="Scroll to about">
+        <span class="hero__scroll-line" aria-hidden="true"></span>
+        <span>Scroll</span>
+      </a>
+    </section>
+
+    <!-- ==================== 2 · ABOUT PREVIEW ==================== -->
+    <section class="section about" id="about" aria-labelledby="about-h">
+      <div class="container about__grid">
+        <div class="about__media" data-animate>
+          <div class="about__img about__img--a" aria-hidden="true"></div>
+          <div class="about__img about__img--b" aria-hidden="true"></div>
+          <div class="about__badge">
+            <b>WHO-GMP</b><span>Quality standards</span>
+          </div>
+        </div>
+
+        <div class="about__copy" data-animate>
+          <span class="eyebrow">About Derby Lifescience</span>
+          <h2 class="h2" id="about-h">Medicine you can rely on, priced so people can reach it</h2>
+          <p>
+            Derby Lifescience is a pharmaceutical company built on a simple belief: quality healthcare
+            should never be a privilege. We develop, source and distribute a broad range of medicines —
+            from pain management and anti-infectives to diabetes care and nutraceuticals.
+          </p>
+          <p>
+            We combine manufacturing depth with a distribution network designed for speed, so a pharmacy in a
+            Tier-3 town waits no longer than one in a metro.
+          </p>
+          <p>
+            Every batch is tested before it ships. Every price is set so treatment stays within reach.
+            That commitment to <strong>quality and patient care</strong> is the whole company.
+          </p>
+          <a href="about.html" class="link-arrow">
+            Read our full story
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3 · PRODUCTS / SERVICES ==================== -->
+    <section class="section section--tint" aria-labelledby="svc-h">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <span class="eyebrow">Products &amp; Services</span>
+          <h2 class="h2" id="svc-h">What we do</h2>
+          <p class="lede">End-to-end pharmaceutical capability — from research through to the retailer's shelf.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card" data-animate>
+            <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg></span>
+            <h3>Pharmaceutical Products</h3>
+            <p>A broad, curated range across the categories clinicians prescribe every day.</p>
+          </article>
+          <article class="card" data-animate>
+            <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span>
+            <h3>Healthcare Solutions</h3>
+            <p>Practical support for hospitals, clinics and pharmacies — not just a product list.</p>
+          </article>
+          <article class="card" data-animate>
+            <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg></span>
+            <h3>Manufacturing</h3>
+            <p>Controlled production discipline, applied consistently to every single batch.</p>
+          </article>
+          <article class="card" data-animate>
+            <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></span>
+            <h3>Research &amp; Development</h3>
+            <p>Better formulations and smarter systems, guided by real clinical need.</p>
+          </article>
+          <article class="card" data-animate>
+            <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <h3>Quality Assurance</h3>
+            <p>Batch-level verification and audit-ready documentation, without exception.</p>
+          </article>
+          <article class="card" data-animate>
+            <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span>
+            <h3>Distribution</h3>
+            <p>A PAN-India network built for predictable, on-time delivery.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+      <!-- ============ SHOWCASE · QUALITY BANNER (full-width image) ============ -->
+    <section class="showcase" aria-labelledby="show-h">
+      <div class="showcase__media" data-parallax="0.12" aria-hidden="true"></div>
+      <div class="showcase__veil" aria-hidden="true"></div>
+
+      <div class="container showcase__inner">
+        <div class="showcase__copy" data-animate>
+          <span class="eyebrow eyebrow--light">Quality Commitment</span>
+          <h2 class="showcase__title" id="show-h">If a batch doesn't meet its specification, it doesn't ship.</h2>
+          <p>
+            Not "we'll make an exception this once". Not "the margin is tight this quarter".
+            It is the one line in this company that has never been up for discussion — and it has
+            never cost us a partner. It has only ever earned us one.
+          </p>
+          <ul class="showcase__points">
+            <li>
+              <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              Batch-level testing before release
+            </li>
+            <li>
+              <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              Documentation kept audit-ready
+            </li>
+            <li>
+              <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              WHO-GMP aligned manufacturing
+            </li>
+          </ul>
+        </div>
+
+        <div class="showcase__card" data-animate>
+          <span class="showcase__card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <b>100%</b>
+          <span>of batches verified before dispatch</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY · INSIDE DERBY (image mosaic) ============ -->
+    <section class="section section--tint gallery" aria-labelledby="gal-h">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <span class="eyebrow">Inside Derby Lifescience</span>
+          <h2 class="h2" id="gal-h">Where the work actually happens</h2>
+          <p class="lede">From the research bench to the loading bay — the stages every medicine passes through before it reaches a patient.</p>
+        </div>
+
+        <div class="gallery__grid" data-animate>
+          <figure class="gshot gshot--lg">
+            <span class="gshot__img gshot__img--1" aria-hidden="true"></span>
+            <figcaption>
+              <b>Research &amp; Development</b>
+              <span>Formulation science and sourcing</span>
+            </figcaption>
+          </figure>
+          
+          <figure class="gshot">
+            <span class="gshot__img gshot__img--2" aria-hidden="true"></span>
+            <figcaption><b>Manufacturing</b><span>Controlled production</span></figcaption>
+          </figure>
+
+          <figure class="gshot">
+            <span class="gshot__img gshot__img--3" aria-hidden="true"></span>
+            <figcaption><b>Quality Testing</b><span>Batch verification</span></figcaption>
+          </figure>
+
+          <figure class="gshot">
+            <span class="gshot__img gshot__img--4" aria-hidden="true"></span>
+            <figcaption><b>Packaging</b><span>Sealed &amp; serialised</span></figcaption>
+          </figure>
+
+          <figure class="gshot">
+            <span class="gshot__img gshot__img--5" aria-hidden="true"></span>
+            <figcaption><b>Distribution</b><span>PAN-India routes</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6 · CORE VALUES ==================== -->
+    <section class="section section--tint" aria-labelledby="val-h">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <span class="eyebrow">Core Values</span>
+          <h2 class="h2" id="val-h">What guides every decision</h2>
+        </div>
+
+        <div class="grid grid--3 values">
+          <div class="val" data-animate><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 7h10M5 12h14M7 17h10"/></svg></span><b>Integrity</b><i>Honest dealing, no shortcuts.</i></div>
+
+          <div class="val" data-animate><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span><b>Quality</b><i>Standards we never trade away.</i></div>
+
+          <div class="val" data-animate><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span><b>Innovation</b><i>Better ways, continuously.</i></div>
+
+          <div class="val" data-animate><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span><b>Sustainability</b><i>Building for the long term.</i></div>
+
+          <div class="val" data-animate><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg></span><b>Responsibility</b><i>A person behind every pack.</i></div>
+
+          <div class="val" data-animate><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span><b>Excellence</b><i>Good enough is never the finish.</i></div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7 · INDUSTRIES WE SERVE ==================== -->
+    <section class="section ind" aria-labelledby="ind-h">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <span class="eyebrow">Industries We Serve</span>
+          <h2 class="h2" id="ind-h">Who we supply</h2>
+        </div>
+          
+        <ul class="ind__list">
+          <li class="ind__item" data-animate><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v4M14 8h-4"/><path d="M18 22V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v18Z"/><path d="M6 22H4a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h2M18 22h2a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-2"/></svg></span>Hospitals</li>
+
+          <li class="ind__item" data-animate><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h5v5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2z"/></svg></span>Clinics</li>
+
+          <li class="ind__item" data-animate><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 8-7 7-7-7"/><path d="M5 3h14l2 5H3z"/><path d="M5 8v11a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8"/></svg></span>Pharmacies</li>
+
+          <li class="ind__item" data-animate><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg></span>Healthcare Professionals</li>
+
+          <li class="ind__item" data-animate><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span>Distributors</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 8 · STATISTICS ==================== -->
+    <section class="stats" aria-labelledby="stats-h">
+      <div class="container">
+        <h2 class="sr-only" id="stats-h">Derby Lifescience in numbers</h2>
+        <div class="stats__grid">
+          <div class="stat" data-animate><b><span class="counter" data-count="10">0</span>+</b><span>Years of experience</span></div>
+          <div class="stat" data-animate><b><span class="counter" data-count="500">0</span>+</b><span>Products in range</span></div>
+          <div class="stat" data-animate><b><span class="counter" data-count="1000">0</span>+</b><span>Healthcare partners</span></div>
+          <div class="stat" data-animate><b>PAN India</b><span>Distribution reach</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 9 · LATEST BLOG ==================== -->
+    <section class="section" id="blog" aria-labelledby="blog-h">
+      <div class="container">
+        <div class="section-head section-head--row" data-animate>
+          <div>
+            <span class="eyebrow">From the blog</span>
+            <h2 class="h2" id="blog-h">Latest insights</h2>
+          </div>
+          <a href="#" class="link-arrow">
+            View all posts
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="post" data-animate>
+            <a href="#" class="post__img post__img--1" aria-hidden="true" tabindex="-1"></a>
+            <div class="post__body">
+              <span class="post__cat">Pharmaceuticals</span>
+              <h3><a href="#">Why quality medicines matter more than price</a></h3>
+              <p>What "quality" actually means on a production line — and why it can't be negotiated.</p>
+              <span class="post__more">Read More
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </div>
+          </article>
+          <article class="post" data-animate>
+            <a href="#" class="post__img post__img--2" aria-hidden="true" tabindex="-1"></a>
+            <div class="post__body">
+              <span class="post__cat">Research</span>
+              <h3><a href="#">Healthcare innovations shaping Indian pharma</a></h3>
+              <p>The formulation and process changes quietly improving outcomes for patients.</p>
+              <span class="post__more">Read More
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </div>
+          </article>
+          <article class="post" data-animate>
+            <a href="#" class="post__img post__img--3" aria-hidden="true" tabindex="-1"></a>
+            <div class="post__body">
+              <span class="post__cat">Industry News</span>
+              <h3><a href="#">Inside pharmaceutical manufacturing standards</a></h3>
+              <p>How GMP discipline turns a good formulation into a dependable medicine.</p>
+              <span class="post__more">Read More
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 10 · CONTACT CTA ==================== -->
+    <section class="cta" aria-labelledby="cta-h">
+      <div class="cta__decor" aria-hidden="true"><span></span><span></span></div>
+      <div class="container cta__inner" data-animate>
+        <h2 class="cta__title" id="cta-h">Looking for reliable pharmaceutical solutions?</h2>
+        <p class="cta__text">Let's talk about what your hospital, pharmacy or distribution business needs.</p>
+        <div class="cta__actions">
+          <a href="contact.html" class="btn btn--light">
+            Contact Us
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+918595939723" class="btn btn--outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91 85959 39723
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+
+      <div class="footer-top">
+        <div class="footer-brand">
+          <!-- LOGO AREA: reserved space for the official logo (footer). -->
+          <div class="footer-logo-slot" aria-label="Derby Lifescience logo area">
+            <img src="image/D.png" alt="Derby Lifescience">
+          </div>
+          <p>Advancing healthcare through quality, innovation, and trust — delivering safe, effective, and affordable medicines across India.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Information</h4>
+          <div class="contact-list">
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>
+              </svg>
+              <span>1st–4th Floors, Fair Ford Tower, Gali No-07, Main Road, Anangpur Village, Opposite Mount Kailash Factory, Faridabad- 121003 (Haryana)</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/>
+               </svg>
+              <span>info@fairfordpharma.com</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5V17a2 2 0 0 1-2 2A13 13 0 0 1 3 6a2 2 0 0 1 2-2z"/>
+              </svg>
+              <span>+91 8595939723</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <span>Follow us</span>
+        <div class="socials" aria-label="Social media">
+          <a href="https://www.linkedin.com/company/fairfordpharma" class="social-btn" target="_blank" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.5v.01M12 17v-3.6a2 2 0 0 1 4 0V17M12 17v-6.5"/></svg>
+          </a>
+          <a href="https://x.com" class="social-btn" target="_blank" aria-label="X">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61550892159031" class="social-btn" target="_blank" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8.5V7a1.5 1.5 0 0 1 1.5-1.5H17M14 8.5H11.5M14 8.5V19M14 12h3"/></svg>
+          </a>
+          <a href="https://www.instagram.com/fairfordpharma/?__pwa=1" class="social-btn" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7v.01"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom__left">
+          <p class="copyright">© 2026 Derby Lifescience. All rights reserved.</p>
+          <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms &amp; Conditions</a>
+          </div>
+        </div>
+
+        <!-- TODO: replace each href="#"  with the real LinkedIn profile URL -->
+        <p class="credit">
+          <span class="credit__by">Designed &amp; created by</span>
+          <a class="credit__name" href="https://www.linkedin.com/in/bhardwaj-tushar-147711309?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">Derby</a><span class="credit__sep">
+          
+          <a class="credit__name" href="https://www.linkedin.com/in/himanshu-prajapati-469737327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">Lifescience</a>
+          <!-- <span class="credit__sep">&amp;</span> -->
+
+          <a class="credit__name" href="https://www.linkedin.com/in/dilipydv/" target="_blank" rel="noopener noreferrer">Team</a>
+          <span class="credit__heart" role="img" aria-label="love">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg>
+          </span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+<!-- Loader (progress + hand-off to the page) -->
+<script src="js/loader.js"></script>
+<!-- Shared header behaviour (capsule + mobile menu) -->
+<script src="js/script.js"></script>
+<!-- Home-page behaviour (reveal + smooth scroll) -->
+<script src="js/home.js"></script>
+
+</body>
+</html>
