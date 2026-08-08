@@ -11,6 +11,10 @@ node_modules/
 # ── Local embedded MongoDB data ───────────────
 .mongo-data/
 
+# ── Durable inquiry capture (personal info) ───
+data/
+*.jsonl
+
 # ── Logs ──────────────────────────────────────
 *.log
 npm-debug.log*

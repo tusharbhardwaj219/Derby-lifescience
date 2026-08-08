@@ -6,3 +6,7 @@ npm-debug.log*
 
 # Local embedded MongoDB data (MONGODB_URI=local)
 .mongo-data/
+
+# Durable inquiry capture (contains personal info — never commit)
+data/
+*.jsonl

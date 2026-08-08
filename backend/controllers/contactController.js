@@ -3,6 +3,7 @@
 const Contact = require('../models/Contact');
 const { isDbConnected } = require('../config/database');
 const { sendAdminNotification, sendUserConfirmation } = require('../config/mailer');
+const { appendInquiry } = require('../utils/inquiryStore');
 
 /** Collapse newlines/tabs in single-line fields (anti header-injection). */
 function oneLine(v) {
@@ -10,34 +11,15 @@ function oneLine(v) {
 }
 
 /**
- * POST /api/contact
- * Validation + rate limiting run as middleware before this. Here we:
- *  1. drop spam (honeypot), 2. save to MongoDB, 3. email the company +
- *  confirm the visitor, 4. record the email outcome, 5. respond.
- * Success = the inquiry was captured (saved OR emailed) — never a total loss.
+ * Background delivery — runs AFTER the user has already been told "success".
+ * Saves to MongoDB (if connected) and emails the company + visitor. Every
+ * outcome is logged; nothing here can affect the user-facing response, so a
+ * slow (5–8s) or failing email never shows the visitor an error.
  */
-async function submitContact(req, res, next) {
-  try {
-    // 1 · Honeypot: a hidden field real users never fill. If a bot filled it,
-    //     pretend success and silently drop the submission.
-    if (typeof req.body.website === 'string' && req.body.website.trim() !== '') {
-      return res.status(200).json({ success: true, message: 'Your message has been sent successfully.' });
-    }
-
-    const data = {
-      name: oneLine(req.body.name),
-      email: oneLine(req.body.email),
-      phone: oneLine(req.body.phone || ''),
-      company: oneLine(req.body.company || ''),
-      subject: oneLine(req.body.subject || '') || 'General Inquiry',
-      message: String(req.body.message || '').trim(),
-      ip: req.ip,
-      userAgent: oneLine(req.get('user-agent') || ''),
-      date: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'full', timeStyle: 'short' })
-    };
-
-    // 2 · Persist first (when the DB is connected).
+function deliverInBackground(data) {
+  (async function () {
     let saved = null;
+
     if (isDbConnected()) {
       try {
         saved = await Contact.create({
@@ -50,7 +32,6 @@ async function submitContact(req, res, next) {
       }
     }
 
-    // 3 · Email the company; confirm the visitor (best-effort).
     let emailOk = false;
     try {
       await sendAdminNotification(data);
@@ -59,23 +40,56 @@ async function submitContact(req, res, next) {
         console.warn('[contact] confirmation email failed:', e.message);
       });
     } catch (e) {
-      console.error('[contact] delivery failed:', e.message);
+      console.error('[contact] delivery email failed:', e.message);
     }
 
-    // 4 · Record the email outcome on the stored inquiry.
     if (saved) {
       Contact.updateOne({ _id: saved._id }, { $set: { emailStatus: emailOk ? 'sent' : 'failed' } })
         .catch(function (e) { console.warn('[contact] status update failed:', e.message); });
     }
 
-    // 5 · Respond. Only a total loss (neither saved nor emailed) is an error.
-    if (emailOk || saved) {
-      return res.status(200).json({ success: true, message: 'Your message has been sent successfully.' });
+    if (!saved && !emailOk) {
+      // Neither DB nor email worked — but the inquiry is safe in data/inquiries.jsonl.
+      console.error('[contact] NOTE: inquiry from ' + data.email +
+        ' was saved to data/inquiries.jsonl only (DB + email both unavailable).');
     }
-    return res.status(500).json({ success: false, message: 'Something went wrong. Please try again later.' });
-  } catch (err) {
-    return next(err);
+  })().catch(function (e) {
+    console.error('[contact] background delivery crashed:', e.message);
+  });
+}
+
+/**
+ * POST /api/contact
+ * Validation + rate limiting run as middleware before this. Here we durably
+ * capture the inquiry, respond immediately, then deliver in the background.
+ */
+function submitContact(req, res) {
+  // Honeypot: a hidden field real users never fill. If a bot filled it,
+  // pretend success and silently drop the submission.
+  if (typeof req.body.website === 'string' && req.body.website.trim() !== '') {
+    return res.status(200).json({ success: true, message: 'Your message has been sent successfully.' });
   }
+
+  const data = {
+    name: oneLine(req.body.name),
+    email: oneLine(req.body.email),
+    phone: oneLine(req.body.phone || ''),
+    company: oneLine(req.body.company || ''),
+    subject: oneLine(req.body.subject || '') || 'General Inquiry',
+    message: String(req.body.message || '').trim(),
+    ip: req.ip,
+    userAgent: oneLine(req.get('user-agent') || ''),
+    date: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'full', timeStyle: 'short' })
+  };
+
+  // 1 · Durable capture first — instant, no network, cannot fail the request.
+  appendInquiry(data);
+
+  // 2 · Tell the user immediately. The submission is safely captured.
+  res.status(200).json({ success: true, message: 'Your message has been sent successfully.' });
+
+  // 3 · Deliver (DB + email) in the background — never blocks or fails the response.
+  deliverInBackground(data);
 }
 
 module.exports = { submitContact };

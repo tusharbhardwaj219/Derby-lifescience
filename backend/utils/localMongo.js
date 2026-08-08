@@ -55,9 +55,33 @@ async function startLocalMongo() {
   }
 
   fs.mkdirSync(DATA_DIR, { recursive: true });
-  mongod = await MongoMemoryServer.create({
-    instance: { port: PORT, dbPath: DATA_DIR, storageEngine: 'wiredTiger' }
-  });
+
+  function clearLocks() {
+    ['mongod.lock', 'WiredTiger.lock'].forEach(function (name) {
+      try { fs.rmSync(path.join(DATA_DIR, name), { force: true }); } catch (e) { /* ignore */ }
+    });
+  }
+  function spawn() {
+    return MongoMemoryServer.create({
+      instance: { port: PORT, dbPath: DATA_DIR, storageEngine: 'wiredTiger' }
+    });
+  }
+
+  // A mongod killed uncleanly (terminal closed without Ctrl+C) can leave the
+  // data dir LOCKED or CORRUPTED (mongod aborts with fassert on start), which
+  // used to silently drop the DB to "disconnected". We self-heal: clear stale
+  // locks and try; if the data is corrupted, reset the dir and retry once.
+  // Inquiries are never lost — they're also captured in data/inquiries.jsonl.
+  clearLocks();
+  try {
+    mongod = await spawn();
+  } catch (e) {
+    console.warn('  ⚠  Local MongoDB data was unusable (' + String(e.message).split('\n')[0] + ')');
+    console.warn('     Resetting backend/.mongo-data and retrying…');
+    try { fs.rmSync(DATA_DIR, { recursive: true, force: true }); } catch (e2) { /* ignore */ }
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+    mongod = await spawn();
+  }
   console.log('  🗄  Local MongoDB started on port ' + PORT + '  (data: backend/.mongo-data)');
   return URI;
 }
