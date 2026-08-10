@@ -27,7 +27,7 @@ async function sendAdminNotification(data) {
   const mail = adminEmail(data);
   await getTransporter().sendMail({
     from: process.env.MAIL_FROM || process.env.SMTP_USER,
-    to: process.env.CONTACT_TO || 'info@fairfordpharma.com',
+    to: process.env.CONTACT_TO || 'approval@derbylifesciences.com',
     replyTo: '"' + String(data.name).replace(/"/g, '') + '" <' + data.email + '>',
     subject: mail.subject,
     text: mail.text,

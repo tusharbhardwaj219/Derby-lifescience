@@ -116,7 +116,7 @@ function warnAboutConfig() {
     console.log('');
     console.log('     Website : ' + url);
     console.log('     Health  : ' + url + '/api/health');
-    console.log('     Inquiries → ' + (process.env.CONTACT_TO || 'info@fairfordpharma.com'));
+    console.log('     Inquiries → ' + (process.env.CONTACT_TO || 'approval@derbylifesciences.com'));
     console.log('');
   });
 
