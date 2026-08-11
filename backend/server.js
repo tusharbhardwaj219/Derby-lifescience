@@ -105,20 +105,23 @@ function warnAboutConfig() {
 }
 
 /* ── Start ─────────────────────────────────────────────────── */
-(async function start() {
-  await connectDB();          // never throws; logs its own status
+(function start() {
   warnAboutConfig();
 
-  const server = app.listen(PORT, function () {
-    const url = 'http://localhost:' + PORT;
+  // Start listening FIRST, so a cloud platform's health check passes immediately.
+  // The DB then connects in the BACKGROUND — the contact form is resilient to the
+  // DB being unavailable, so startup must never block on it. (Blocking on the DB
+  // was causing Railway's 502 "Application failed to respond".)
+  const server = app.listen(PORT, '0.0.0.0', function () {
     console.log('');
-    console.log('  ✅ Derby Lifescience is running');
-    console.log('');
-    console.log('     Website : ' + url);
-    console.log('     Health  : ' + url + '/api/health');
+    console.log('  ✅ Derby Lifescience API is running on port ' + PORT);
+    console.log('     Health  : /api/health');
     console.log('     Inquiries → ' + (process.env.CONTACT_TO || 'approval@derbylifesciences.com'));
     console.log('');
   });
+
+  // Connect to MongoDB in the background (never throws; logs its own status).
+  connectDB().catch(function (e) { console.error('[db] connect error:', e.message); });
 
   ['SIGINT', 'SIGTERM'].forEach(function (sig) {
     process.on(sig, function () {

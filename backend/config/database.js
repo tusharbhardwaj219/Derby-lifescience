@@ -29,6 +29,12 @@ async function connectDB() {
 
   const setting = uri.trim().toLowerCase();
   if (setting === 'local' || setting === 'embedded') {
+    // The embedded MongoDB is a DEV-only convenience. In production (e.g. Railway)
+    // it must never run — set a real Atlas URI there instead.
+    if (process.env.NODE_ENV === 'production') {
+      console.error('  ⚠  MONGODB_URI=local is dev-only — set a real Atlas connection string in production. Running without a database for now.');
+      return false;
+    }
     try {
       uri = await startLocalMongo();
       usingLocal = true;
