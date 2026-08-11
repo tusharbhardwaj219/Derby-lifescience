@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "mongoose": "^8.9.5",
-    "nodemailer": "^6.9.16"
+    "mongoose": "^8.9.5"
   }
 }
