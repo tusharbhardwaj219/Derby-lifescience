@@ -91,7 +91,7 @@ module.exports = async function handler(req, res) {
   let emailOk = false;
   try {
     const from = process.env.MAIL_FROM || process.env.SMTP_USER;
-    const to = process.env.CONTACT_TO;
+    const to = process.env.CONTACT_TO || process.env.contact_to || 'approval@derbylifesciences.com';
     const text = 'A new inquiry from the Derby Lifescience website.\n\n' +
       'Name: ' + data.name + '\nEmail: ' + data.email + '\nPhone: ' + (data.phone || '-') +
       '\nCompany: ' + (data.company || '-') + '\nSubject: ' + data.subject +
