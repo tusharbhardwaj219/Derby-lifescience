@@ -18,7 +18,8 @@
   var isLocal = (host === 'localhost' || host === '127.0.0.1');
 
   if (!isLocal) {
-    // 👉 AFTER you deploy the backend to Railway/Render, paste its URL here:
-    window.DERBY_API_BASE = 'https://REPLACE-WITH-YOUR-BACKEND-URL.up.railway.app';
+    // Production: the API is a Vercel serverless function on the SAME origin
+    // (/api/contact) — so no separate backend URL is needed, and there is no CORS.
+    window.DERBY_API_BASE = '';
   }
 })();
