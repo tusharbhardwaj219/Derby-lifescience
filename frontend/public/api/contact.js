@@ -37,7 +37,7 @@ function oneLine(v) { return String(v == null ? '' : v).replace(/[\r\n\t]+/g, ' 
 /* ---- Email via Resend HTTP API (works on Vercel; no SMTP) ---- */
 async function sendEmail(data) {
   if (!process.env.RESEND_API_KEY) { console.error('[contact] RESEND_API_KEY not set'); return false; }
-  const to = process.env.CONTACT_TO || process.env.contact_to || 'approval@derbylifesciences.com';
+  const to = process.env.CONTACT_TO || process.env.contact_to || 'info@fairfordpharma.com';
   const html =
     '<h2 style="color:#1E2821;margin:0 0 12px">New Contact Form Inquiry</h2>' +
     '<p style="font-size:15px;line-height:1.6"><b>Name:</b> ' + esc(data.name) +
