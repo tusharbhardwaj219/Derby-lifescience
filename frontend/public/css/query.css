@@ -217,6 +217,8 @@ html.dq-lock, html.dq-lock body { overflow: hidden; }
 .dq-modal__head .dq-x { margin-left: auto; }
 
 .dq-form { padding: 22px 24px 26px; }
+/* honeypot — kept out of view and off the tab order (QA-02 anti-spam) */
+.dq-hp { position: absolute !important; left: -9999px !important; top: auto; width: 1px; height: 1px; overflow: hidden; }
 .dq-form__section-t { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pr-faint); margin: 4px 0 14px; }
 .dq-form__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 14px; }
 .dq-field { display: flex; flex-direction: column; gap: 6px; }

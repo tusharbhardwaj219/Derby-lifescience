@@ -112,11 +112,17 @@ module.exports = async function handler(req, res) {
 
   const b = (req.body && typeof req.body === 'object') ? req.body : {};
 
+  // Honeypot — silently accept & drop bot submissions (QA-02)
+  if (typeof b.website === 'string' && b.website.trim() !== '') {
+    return res.status(200).json({ success: true, queryId: oneLine(b.queryId) || 'DLS-QRY' });
+  }
+
   // Validate the essentials
   const name = oneLine(b.name), email = oneLine(b.email), mobile = oneLine(b.mobile);
-  const products = Array.isArray(b.products) ? b.products
+  const products = (Array.isArray(b.products) ? b.products : [])
     .filter(function (p) { return p && p.name; })
-    .map(function (p) { return { name: oneLine(p.name), sku: oneLine(p.sku || p.name), qty: clampQty(p.qty || 1) }; }) : [];
+    .slice(0, 150)                                     // sanity cap on payload size (QA-02)
+    .map(function (p) { return { name: oneLine(p.name), sku: oneLine(p.sku || p.name), qty: clampQty(p.qty || 1) }; });
 
   const errors = [];
   if (name.length < 2) errors.push({ field: 'name', message: 'Full name is required.' });

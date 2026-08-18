@@ -191,6 +191,7 @@
             '<button class="dq-x" type="button" data-dq="close" aria-label="Close">' + I.x + '</button>' +
           '</div>' +
           '<form class="dq-form" id="dqForm" novalidate>' +
+            '<div class="dq-hp" aria-hidden="true"><label>Company URL (leave empty)<input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>' +
             '<div class="dq-form__products" id="dqFormProducts"></div>' +
             '<p class="dq-form__section-t">Your details</p>' +
             '<div class="dq-form__grid">' +
@@ -541,8 +542,15 @@
       .then(function (ok) { if (timer) window.clearTimeout(timer); return ok; });
   }
 
+  var submitting = false;                             // QA-01: re-entrancy guard
   function handleSubmit(e) {
     e.preventDefault();
+    if (submitting) return;                           // block double-submit (Enter key / rapid clicks)
+
+    /* QA-02: honeypot — a real stockist never fills this hidden field */
+    var hp = formEl.querySelector('[name="website"]');
+    if (hp && hp.value.trim() !== '') return;         // silently drop bot submissions
+
     if (!state.length) { toast('Your query is empty'); goDrawer(); return; }
     var data = collectForm();
     if (!validate(data)) {
@@ -550,6 +558,10 @@
       if (firstBad) firstBad.focus();
       return;
     }
+
+    submitting = true;
+    var submit = document.getElementById('dqSubmit');
+    if (submit) { submit.classList.add('is-loading'); submit.disabled = true; }   // disabled also blocks Enter-submit
 
     var queryId = genQueryId();
     var products = state.map(function (it) { return { name: it.name, sku: it.sku, qty: it.qty }; });
@@ -563,19 +575,16 @@
     var waUrl = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(buildWhatsAppText(q));
     var waWin = window.open(waUrl, '_blank');
 
-    /* loading state, then success (email/record happen best-effort in the background) */
-    var submit = document.getElementById('dqSubmit');
-    if (submit) submit.classList.add('is-loading');
-
     var payload = {
       queryId: queryId, name: data.name, company: data.company, mobile: data.mobile, email: data.email,
       city: data.city, state: data.state, gst: data.gst, licence: data.licence, message: data.message,
-      products: products, whatsappOpened: !!waWin, createdAt: new Date().toISOString()
+      products: products, website: hp ? hp.value : '', whatsappOpened: !!waWin, createdAt: new Date().toISOString()
     };
     postQuery(payload);   // fire-and-forget; success screen never blocks on email
 
     window.setTimeout(function () {
-      if (submit) submit.classList.remove('is-loading');
+      submitting = false;
+      if (submit) { submit.classList.remove('is-loading'); submit.disabled = false; }
       lastSubmitted = { queryId: queryId, products: products, waUrl: waUrl };
       API.clear();                 // enquiry sent → empty the basket
       showSuccess(lastSubmitted, !waWin);
