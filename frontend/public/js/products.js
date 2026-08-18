@@ -212,6 +212,10 @@
              'stroke-linecap="round" stroke-linejoin="round">' +
              '<path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>';
 
+  /* icons for the Add-to-Query button (CSS toggles plus↔check by .is-added) */
+  var Q_PLUS  = '<svg class="dq-ico-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>';
+  var Q_CHECK = '<svg class="dq-ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+
   grid.innerHTML = PRODUCTS.map(function (p, i) {
     return '' +
       '<article class="p-card" data-animate data-name="' + esc(p.name.toLowerCase()) + '" ' +
@@ -223,7 +227,12 @@
           '<span class="p-card__zoom" aria-hidden="true">' + ZOOM + '</span>' +
         '</button>' +
         '<h3 class="p-card__name">' + esc(p.name) + '</h3>' +
-        '<a class="btn btn--primary btn--block" href="contact.html">Contact Us</a>' +
+        '<div class="p-card__actions">' +
+          '<a class="btn p-card__contact" href="contact.html" aria-label="Contact about ' + esc(p.name) + '">Contact</a>' +
+          '<button class="btn btn--primary p-card__query" type="button" data-index="' + i + '" aria-pressed="false">' +
+            Q_PLUS + Q_CHECK + '<span class="p-card__query-label">Add to Query</span>' +
+          '</button>' +
+        '</div>' +
       '</article>';
   }).join('');
 
@@ -435,6 +444,7 @@
     var at = vis.indexOf(current);
     var next = vis[(at + dir + vis.length) % vis.length];
     show(next);
+    if (window.DerbyProductAssemble) window.DerbyProductAssemble(false);   // re-assemble the new packshot
   }
 
   function fill(p) {
@@ -497,6 +507,7 @@
     if (btnPrev) btnPrev.hidden = single;
     if (btnNext) btnNext.hidden = single;
     syncHash(index);
+    syncModalQueryBtn();
   }
 
   function open(index) {
@@ -512,6 +523,7 @@
       var c = modal.querySelector('.pm__close');
       if (c) c.focus();
     });
+    if (window.DerbyProductAssemble) window.DerbyProductAssemble(true);   // fly the packshot together, then reveal details
   }
 
   function close() {
@@ -551,6 +563,53 @@
     if (!trigger) return;
     open(parseInt(trigger.getAttribute('data-index'), 10));
   });
+
+  /* ---------- Add to Query (enquiry basket) ---------- */
+  /* toggle the product in the basket without leaving the page */
+  grid.addEventListener('click', function (e) {
+    var q = e.target.closest('.p-card__query');
+    if (!q) return;
+    var p = PRODUCTS[parseInt(q.getAttribute('data-index'), 10)];
+    if (!p || !window.DerbyQuery) return;
+    if (window.DerbyQuery.has(p.name)) {
+      window.DerbyQuery.remove(p.name);
+    } else {
+      window.DerbyQuery.add({ sku: p.name, name: p.name, category: p.category || '', src: p.src, qty: 1 });
+      q.classList.add('just-added');
+      window.setTimeout(function () { q.classList.remove('just-added'); }, 450);
+    }
+  });
+
+  /* keep every card button — and the modal button — mirroring the basket */
+  var btnPmQuery = document.getElementById('pmAddQuery');
+  function syncModalQueryBtn() {
+    if (!btnPmQuery || !window.DerbyQuery) return;
+    var p = PRODUCTS[current];
+    var on = !!(p && window.DerbyQuery.has(p.name));
+    btnPmQuery.classList.toggle('is-added', on);
+    var lbl = btnPmQuery.querySelector('.pm-q-label');
+    if (lbl) lbl.textContent = on ? 'Added to Query' : 'Add to Query';
+  }
+  function syncQueryButtons() {
+    if (!window.DerbyQuery) return;
+    Array.prototype.forEach.call(grid.querySelectorAll('.p-card__query'), function (btn) {
+      var p = PRODUCTS[parseInt(btn.getAttribute('data-index'), 10)];
+      var on = !!(p && window.DerbyQuery.has(p.name));
+      btn.classList.toggle('is-added', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      var lbl = btn.querySelector('.p-card__query-label');
+      if (lbl) lbl.textContent = on ? 'Added' : 'Add to Query';
+    });
+    syncModalQueryBtn();
+  }
+  document.addEventListener('derbyquery:change', syncQueryButtons);
+  if (btnPmQuery) btnPmQuery.addEventListener('click', function () {
+    var p = PRODUCTS[current];
+    if (!p || !window.DerbyQuery) return;
+    if (window.DerbyQuery.has(p.name)) window.DerbyQuery.remove(p.name);
+    else window.DerbyQuery.add({ sku: p.name, name: p.name, category: p.category || '', src: p.src, qty: 1 });
+  });
+  syncQueryButtons();   // reflect a query restored from a previous visit
 
   modal.addEventListener('click', function (e) {
     if (e.target.closest('[data-close]')) close();

@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/loader.css" />
   <link rel="stylesheet" href="css/products.css" />
+  <link rel="stylesheet" href="css/query.css" />
 
   <noscript>
     <style>
@@ -262,7 +263,12 @@
           <p class="pm__disclaimer" id="pmDisclaimer"></p>
 
           <div class="pm__actions">
-            <a href="contact.html" class="btn btn--primary btn--block">
+            <button type="button" class="btn btn--primary btn--block" id="pmAddQuery">
+              <svg class="dq-ico-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              <svg class="dq-ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              <span class="pm-q-label">Add to Query</span>
+            </button>
+            <a href="contact.html" class="btn pm__contact btn--block">
               Contact Us
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
@@ -369,6 +375,10 @@
   <!-- catalogue data (must load before products.js) -->
   <script src="js/products-data.js"></script>
   <script src="js/products.js"></script>
+  <!-- premium packshot assembly animation for the details modal -->
+  <script src="js/product-assemble.js"></script>
+  <!-- stockist product query & enquiry system (basket + drawer + WhatsApp/email) -->
+  <script src="js/query.js"></script>
 </body>
 </html>
 

@@ -583,3 +583,73 @@ html.pm-open, html.pm-open body { overflow: hidden; }
   .p-card__media img { opacity: 1; }
   html { scroll-behavior: auto; }
 }
+
+/* ============================================================
+   PRODUCT ASSEMBLY ANIMATION            (js/product-assemble.js)
+   Fragments fly in from all four sides and lock into the packshot,
+   which then cross-fades in crisp with a glow, light-sweep and pop.
+   All work is transform/opacity/filter only (GPU) on an absolutely
+   positioned overlay, so nothing here shifts the page layout.
+   ============================================================ */
+
+/* the packshot is hidden only while the pieces are assembling; the
+   instant assembly finishes (.pa-done) it fades back in crisp */
+.pm__media.pa-run:not(.pa-done) #pmImage { opacity: 0; }
+
+.pm__media.pa-done #pmImage { animation: pa-pop 0.72s var(--ease) both; }
+@keyframes pa-pop {
+  0%   { opacity: 0; transform: scale(0.965);
+         filter: drop-shadow(0 10px 20px rgba(38, 50, 41, 0.10)); }
+  55%  { opacity: 1; transform: scale(1.014);
+         filter: drop-shadow(0 26px 44px rgba(71, 98, 79, 0.30)) brightness(1.03); }
+  100% { opacity: 1; transform: scale(1);
+         filter: drop-shadow(0 18px 32px rgba(38, 50, 41, 0.16)); }
+}
+
+/* stage — overlays the packshot box exactly (positioned from JS) */
+.pa { position: absolute; z-index: 2; pointer-events: none; perspective: 900px; }
+
+.pa__piece {
+  position: absolute; background-repeat: no-repeat;
+  will-change: transform, opacity, filter; backface-visibility: hidden;
+}
+
+/* soft brand glow that blooms as the product locks together */
+.pa__glow {
+  position: absolute; left: 50%; top: 50%;
+  width: 130%; height: 130%; transform: translate(-50%, -50%) scale(0.72);
+  border-radius: 50%; opacity: 0; filter: blur(6px);
+  background: radial-gradient(circle at 50% 50%,
+              rgba(118, 147, 130, 0.42) 0%, rgba(118, 147, 130, 0.18) 42%, transparent 68%);
+}
+
+/* light-sweep across the finished product (clipped to the box) */
+.pa__shine-wrap { position: absolute; inset: 0; overflow: hidden; z-index: 4; border-radius: 10px; }
+.pa__shine {
+  position: absolute; top: -20%; left: 0; width: 46%; height: 140%;
+  transform: translateX(-160%) skewX(-18deg); mix-blend-mode: screen;
+  background: linear-gradient(90deg, transparent,
+              rgba(255, 255, 255, 0.55) 48%, rgba(255, 255, 255, 0.88) 52%, transparent);
+}
+
+/* micro-particles that drift out once as it settles */
+.pa__spark {
+  position: absolute; width: 5px; height: 5px; border-radius: 50%; opacity: 0;
+  will-change: transform, opacity;
+  background: radial-gradient(circle, #fff 0%, rgba(118, 147, 130, 0.9) 60%, transparent 70%);
+}
+
+/* keep the "1 of N" caption above the assembly overlay */
+.pm__media .pm__pos { z-index: 6; }
+
+/* details column eases in just after the product resolves (open only) */
+.pm__panel.pm-seq .pm__body { opacity: 0; transform: translateY(12px); }
+.pm__panel.pm-seq.pm-seq--in .pm__body {
+  opacity: 1; transform: none;
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pm__media.pa-done #pmImage { animation: none; }
+  .pm__panel.pm-seq .pm__body { opacity: 1; transform: none; transition: none; }
+}
